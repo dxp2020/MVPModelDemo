@@ -8,12 +8,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app_test" />
-            <option value="$PROJECT_DIR$/app_test_rx2" />
-            <option value="$PROJECT_DIR$/base" />
-            <option value="$PROJECT_DIR$/base_rx2" />
-            <option value="$PROJECT_DIR$/mvp_architecture" />
-            <option value="$PROJECT_DIR$/mvp_architecture_rx2" />
+            <option value="$PROJECT_DIR$/rx1" />
+            <option value="$PROJECT_DIR$/rx1/app_test" />
+            <option value="$PROJECT_DIR$/rx1/base" />
+            <option value="$PROJECT_DIR$/rx1/mvp_architecture" />
+            <option value="$PROJECT_DIR$/rx2" />
+            <option value="$PROJECT_DIR$/rx2/app_test_rx2" />
+            <option value="$PROJECT_DIR$/rx2/rx2_base" />
+            <option value="$PROJECT_DIR$/rx2/rx2_mvp_architecture" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

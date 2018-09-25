@@ -4,6 +4,6 @@ apply from: "${GRADLES.baseConfig}"
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':mvp_architecture')
+    api project(':rx1:mvp_architecture')
     api "com.squareup.okhttp3:logging-interceptor:3.9.1"
 }
