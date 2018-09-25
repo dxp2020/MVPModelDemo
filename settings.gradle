@@ -1,0 +1,1 @@
+include ':app_test_rx2',':mvp_architecture',':mvp_architecture_rx2', ':base', ':base_rx2', ':app_test'

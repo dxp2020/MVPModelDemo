@@ -1,0 +1,9 @@
+apply plugin: 'com.android.library'
+apply from: "${GRADLES.baseConfig2}"
+
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':mvp_architecture_rx2')
+    api "com.squareup.okhttp3:logging-interceptor:3.9.1"
+}

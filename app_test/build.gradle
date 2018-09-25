@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+apply from: "${GRADLES.baseConfig2}"
+
+android{
+    defaultConfig {
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true    // Enable RS support
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'HuoTongTianXia'
+            keyPassword 'HuoTongTianXia2017'
+            storeFile file('./mula.keystore')
+            storePassword 'HuoTongTianXia2017'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':mvp_architecture')
+    implementation project(':base')
+}
+

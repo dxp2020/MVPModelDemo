@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_show_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示对话框"
+        />
+
+
+    <Button
+        android:id="@+id/btn_show_full_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示全屏对话框"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_weather"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        />
+
+</LinearLayout>

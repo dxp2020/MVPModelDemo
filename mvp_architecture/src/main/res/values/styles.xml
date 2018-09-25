@@ -1,0 +1,20 @@
+<resources>
+
+    <!--通用无遮罩层、无标题栏的自定义Dialog-->
+    <style name="common_dialog_no_frame" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <!--通用无遮罩层、无标题栏、无暗色背景的自定义Dialog-->
+    <style name="net_dialog_no_frame_no_bg" parent="common_dialog_no_frame">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+</resources>

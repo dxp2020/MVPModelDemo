@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/shape_dialog_loading"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--<ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp" />-->
+
+        <ImageView
+            android:id="@+id/tipImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@mipmap/loading_icon"/>
+
+        <TextView
+            android:id="@+id/tipTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="数据加载中"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+ext {
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+    minSdkVersion = 16
+    targetSdkVersion =26
+    versionCode = 0
+    versionName = "0.0.0"
+    javaVersion = JavaVersion.VERSION_1_8
+
+    COMPONENT_DIR = rootProject.rootDir.absolutePath + "/gradle_component/"
+
+    GRADLES = [
+            baseConfig: COMPONENT_DIR + "baseconfig.gradle",
+            baseConfig2: COMPONENT_DIR + "baseconfig2.gradle",
+            libConfig : COMPONENT_DIR + "libconfig.gradle",
+    ]
+
+    EXCLUDES = [
+
+    ]
+
+    // SUPPORT
+    SUPPORT_VERSION = '27.0.2'
+    SUPPORTDEPS = [
+            supportV4   : "com.android.support:support-v4:${SUPPORT_VERSION}",
+            supportV13  : "com.android.support:support-v13:${SUPPORT_VERSION}",
+            appcompatV7 : "com.android.support:appcompat-v7:${SUPPORT_VERSION}",
+            cardview    : "com.android.support:cardview-v7:${SUPPORT_VERSION}",
+            recyclerView: "com.android.support:recyclerview-v7:${SUPPORT_VERSION}",
+            design      : "com.android.support:design:${SUPPORT_VERSION}",
+
+            annotations : "com.android.support:support-annotations:${SUPPORT_VERSION}",
+            multidex    : 'com.android.support:multidex:1.0.1',
+    ]
+
+    EVENTBUS_VERSION = '3.1.1'
+    GREENDAO_VERSION = '3.2.2'
+    GLIDE_VERSION = '3.7.0'
+    FLEXLAYOUT_VERSION = '1.2.7'
+    FLEXBOX_VERSION = '0.2.2'
+    ZING_VERSION = '3.3.0'
+
+//    rxjava2+retrofit2
+    RXJAVA_VERSION2 = '2.1.0'
+    RXANDROID_VERSION2 = '2.1.0'
+    RETROFIT_VERSION2 = '2.2.0'
+    RXLIFECYCLE_VERSION2 = '2.2.2'
+//    rxjava+retrofit2
+    RXJAVA_VERSION = '1.3.0'
+    RXANDROID_VERSION = '1.2.1'
+    RETROFIT_VERSION = '2.3.0'
+    RXLIFECYCLE_VERSION = '0.3.0'
+
+    UTILS_VERSION = '1.20.1'
+    OTHERDEPS = [
+            leakcanary            : 'com.squareup.leakcanary:leakcanary-android:1.5.1',
+            eventbus              : "org.greenrobot:eventbus:${EVENTBUS_VERSION}",
+            greendao              : "org.greenrobot:greendao:${GREENDAO_VERSION}",
+            greendao_generator   : "org.greenrobot:greendao-generator:${GREENDAO_VERSION}",
+            glide                  : "com.github.bumptech.glide:glide:${GLIDE_VERSION}",
+            flexlayout            : "com.github.mmin18:flexlayout:${FLEXLAYOUT_VERSION}",
+            flexbox               : "com.google.android:flexbox:${FLEXBOX_VERSION}",
+            zxing                 : "com.google.zxing:core:${ZING_VERSION}",
+            utilcode               : "com.blankj:utilcode:${UTILS_VERSION}",
+            findbugs              : 'com.google.code.findbugs:jsr305:2.0.1',
+            mqttv3                : 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0',
+            mqttv3_android        : 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1',
+            gson                  : 'com.google.code.gson:gson:2.7',
+            okhttp                : 'com.squareup.okhttp3:okhttp:3.8.0',
+
+            rxjava2                : "io.reactivex.rxjava2:rxjava:${RXJAVA_VERSION2}",
+            rxandroid2             : "io.reactivex.rxjava2:rxandroid:${RXANDROID_VERSION2}",
+            retrofit2              : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION2}",
+            converter_gson2        : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION2}",
+            adapter_rxjava2        : "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION2}",
+            rxlifecycle2           : "com.trello.rxlifecycle2:rxlifecycle:${RXLIFECYCLE_VERSION2}",
+            rxlifecycle_components2 : "com.trello.rxlifecycle2:rxlifecycle-components:${RXLIFECYCLE_VERSION2}",
+
+            rxjava                : "io.reactivex:rxjava:${RXJAVA_VERSION}",
+            rxandroid             : "io.reactivex:rxandroid:${RXANDROID_VERSION}",
+            retrofit               : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
+            converter_gson        : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
+            adapter_rxjava        : "com.squareup.retrofit2:adapter-rxjava:${RETROFIT_VERSION}",
+            rxlifecycle           : "com.trello:rxlifecycle:${RXLIFECYCLE_VERSION}",
+            rxlifecycle_components: "com.trello:rxlifecycle-components:${RXLIFECYCLE_VERSION}",
+    ]
+
+    PARCELER_VERSION = "1.2"
+    ROUTER_VERSION = "2.5.0"
+    BUTTERKNIFE_VERSION = "8.4.0"
+    DEVDEPS = [
+            butterknifeAnnotationProcessor: "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
+            butterknifeCompile            : "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
+
+            parcelerAnnotationProcessor   : "com.github.yjfnypeu.Parceler:compiler:$PARCELER_VERSION",
+            parcelerCompile               : "com.github.yjfnypeu.Parceler:api:$PARCELER_VERSION",
+
+            routerAnnotationProcessor     : "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION",
+            routerCompile                 : "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION"
+    ]
+
+    //我们自己写的lib
+    MULALIBS = [
+//            mula_retrofit            : "com.mula:retrofit:1.0.0",
+    ]
+
+}
