@@ -21,8 +21,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainPre
     TextView tvWeather;
 
     @Override
-    protected void handleRebuild(Bundle savedInstanceState) {
-        init();
+    public void handleRebuild(Bundle savedInstanceState) {
+        super.handleRebuild(savedInstanceState);
     }
 
     @Override

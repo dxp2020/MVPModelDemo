@@ -25,9 +25,10 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
-    private Unbinder unbinder;
     public boolean isFullScreen;//是否全屏
+    private Unbinder unbinder;
     private OnInitViewListener mOnInitViewListener;
+    private Bundle savedInstanceState;
 
     @Nullable
     @Override
@@ -118,11 +119,6 @@ public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
             mOnInitViewListener.initView(mRootView);
         }
     }
-    //处理页面重建
-    protected void handleRebuild(Bundle savedInstanceState) {init();}
-    //event bus 事件处理，必须重写
-    @Subscribe
-    public void onEventMainThread(Intent pIntent) {}
 
     public interface OnInitViewListener {
         void initView(View view);
@@ -131,4 +127,18 @@ public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
     public void onInitViewListener(OnInitViewListener mOnInitView) {
         this.mOnInitViewListener = mOnInitView;
     }
+
+    //处理页面重建
+    public void handleRebuild(Bundle savedInstanceState) {
+        this.savedInstanceState = savedInstanceState;
+        init();
+    }
+    //获取用于重建的Bundle，可用于重建或者判断是否重建
+    public Bundle getSavedInstanceState() {
+        return savedInstanceState;
+    }
+    //event bus 事件处理，必须重写
+    @Subscribe
+    public void onEventMainThread(Intent pIntent) {}
+
 }

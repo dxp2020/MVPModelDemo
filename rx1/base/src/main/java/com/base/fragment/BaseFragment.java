@@ -24,6 +24,7 @@ import butterknife.Unbinder;
 public abstract class BaseFragment<P extends MvpPresenter> extends MvpFragment<P> {
     public MvpActivity mActivity;
     private Unbinder unbinder;
+    private Bundle savedInstanceState;
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -87,13 +88,22 @@ public abstract class BaseFragment<P extends MvpPresenter> extends MvpFragment<P
     protected void initView() {}
     protected void initData() {}
     protected void initEvent() {}
+    //处理页面重建
+    public void handleRebuild(Bundle savedInstanceState) {
+        this.savedInstanceState = savedInstanceState;
+        init();
+    }
     //返回键处理
     public boolean onBackPressed() {
         return false;
     }
-    //处理页面重建
-    public void handleRebuild(Bundle savedInstanceState) {init();}
+    //获取用于重建的Bundle，可用于重建或者判断是否重建
+    public Bundle getSavedInstanceState() {
+        return savedInstanceState;
+    }
     //event bus 事件处理，必须重写
     @Subscribe
     public void onEventMainThread(Intent pIntent) {}
+
+
 }

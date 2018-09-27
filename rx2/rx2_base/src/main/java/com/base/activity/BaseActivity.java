@@ -26,6 +26,7 @@ import butterknife.Unbinder;
 public abstract class BaseActivity<P extends MvpPresenter> extends MvpActivity<P> {
     public Activity mActivity;
     public Unbinder unbinder;
+    private Bundle savedInstanceState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +95,14 @@ public abstract class BaseActivity<P extends MvpPresenter> extends MvpActivity<P
     protected void initData() {}
     protected void initEvent() {}
     //处理页面重建
-    protected void handleRebuild(Bundle savedInstanceState) {init();}
+    public void handleRebuild(Bundle savedInstanceState) {
+        this.savedInstanceState = savedInstanceState;
+        init();
+    }
+    //获取用于重建的Bundle，可用于重建或者判断是否重建
+    public Bundle getSavedInstanceState() {
+        return savedInstanceState;
+    }
     //event bus 事件处理，必须重写
     @Subscribe
     public void onEventMainThread(Intent pIntent) {}
