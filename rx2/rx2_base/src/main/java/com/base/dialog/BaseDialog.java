@@ -29,6 +29,7 @@ public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
     private Unbinder unbinder;
     private OnInitViewListener mOnInitViewListener;
     private Bundle savedInstanceState;
+    private boolean isInitView;//是否初始化dialog的view
 
     @Nullable
     @Override
@@ -36,6 +37,7 @@ public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
         if(isFullScreen){
             getDialog().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
+        isInitView = mRootView==null;
         return super.onCreateView(inflater,container,savedInstanceState);
     }
 
@@ -59,11 +61,14 @@ public abstract class BaseDialog<P extends MvpPresenter> extends MvpDialog<P> {
             EventBus.getDefault().register(this);
         //注册ButterKnife
         unbinder = ButterKnife.bind(this, mRootView);
+        //此种情况，无需重新初始化，避免dismiss之后，重新初始化的问题
+        if(!isInitView&&savedInstanceState==null){
+            return;
+        }
         initView();
         initData();
         initEvent();
     }
-
     /**
      * 反初始化
      */
