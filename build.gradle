@@ -6,8 +6,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'// 添加此插件支持ButterKnife在Library中使用  as3.0.1 不兼容8.8.1
+        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
     }
 }
 

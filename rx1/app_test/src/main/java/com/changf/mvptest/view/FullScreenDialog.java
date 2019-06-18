@@ -2,7 +2,7 @@ package com.changf.mvptest.view;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.base.dialog.BaseDialog;
 import com.changf.mvptest.R;

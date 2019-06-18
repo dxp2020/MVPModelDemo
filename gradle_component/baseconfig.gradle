@@ -61,7 +61,9 @@ android {
 }
 
 dependencies {
-    api rootProject.ext.SUPPORTDEPS.appcompatV7
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.SUPPORTDEPS.appcompat
     api rootProject.ext.SUPPORTDEPS.multidex
     api rootProject.ext.SUPPORTDEPS.recyclerView
 

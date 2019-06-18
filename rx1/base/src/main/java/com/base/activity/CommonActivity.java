@@ -4,8 +4,11 @@ package com.base.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+
+
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.base.R;
 import com.base.fragment.BaseFragment;
@@ -54,7 +57,7 @@ public class CommonActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         // 横屏转竖屏
-        int state = this.getResources().getConfiguration().orientation;
+        int state = getResources().getConfiguration().orientation;
         if (state == android.content.res.Configuration.ORIENTATION_LANDSCAPE) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             return;
@@ -62,7 +65,7 @@ public class CommonActivity extends BaseActivity {
         // 在Fragment中拦截返回事件
         boolean isReturn = false;
         for (Fragment fragment : getSupportFragmentManager().getFragments()) {
-            if (fragment != null && fragment instanceof BaseFragment) {//可能ull需判断
+            if (fragment != null && fragment instanceof BaseFragment) {//可能null需判断
                 if ( ((BaseFragment) fragment).onBackPressed() ) {
                     isReturn = true;
                 }

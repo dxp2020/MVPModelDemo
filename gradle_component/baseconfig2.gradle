@@ -60,16 +60,15 @@ android {
 }
 
 dependencies {
-    provided fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 
-    api rootProject.ext.SUPPORTDEPS.appcompatV7
+    api rootProject.ext.SUPPORTDEPS.appcompat
     api rootProject.ext.SUPPORTDEPS.multidex
     api rootProject.ext.SUPPORTDEPS.recyclerView
 
     api rootProject.ext.OTHERDEPS.utilcode
     api rootProject.ext.OTHERDEPS.eventbus
     api rootProject.ext.OTHERDEPS.glide
-//    api rootProject.ext.OTHERDEPS.rxlifecycle
     api rootProject.ext.OTHERDEPS.rxlifecycle_components2
     api rootProject.ext.OTHERDEPS.retrofit2
     api rootProject.ext.OTHERDEPS.converter_gson2

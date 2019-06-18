@@ -2,8 +2,8 @@ package com.base;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+
+import androidx.multidex.MultiDexApplication;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.squareup.leakcanary.LeakCanary;
