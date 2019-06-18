@@ -17,7 +17,6 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         mApplication = this;
-        MultiDex.install(this);//分包
 
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
