@@ -1,8 +1,8 @@
 ext {
-    compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
     minSdkVersion = 16
-    targetSdkVersion =26
+    targetSdkVersion =27
     versionCode = 0
     versionName = "0.0.0"
     javaVersion = JavaVersion.VERSION_1_8
@@ -101,7 +101,6 @@ ext {
 
     //我们自己写的lib
     MULALIBS = [
-//            mula_retrofit            : "com.mula:retrofit:1.0.0",
     ]
 
 }

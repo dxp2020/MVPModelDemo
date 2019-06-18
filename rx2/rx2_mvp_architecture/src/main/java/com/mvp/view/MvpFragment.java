@@ -32,10 +32,6 @@ public abstract class MvpFragment<P extends MvpPresenter> extends RxFragment imp
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //用于页面被销毁重建
-        if(mRootView!=null){
-            ((ViewGroup) mRootView.getParent()).removeView(mRootView);
-        }
         if (mvpPresenter != null) {
             mvpPresenter.detachView();
         }

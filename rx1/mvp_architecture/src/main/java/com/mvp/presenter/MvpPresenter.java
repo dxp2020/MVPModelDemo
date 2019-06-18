@@ -14,6 +14,7 @@ import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
 
 public class MvpPresenter<V> implements Presenter<V>,Serializable {
@@ -21,6 +22,7 @@ public class MvpPresenter<V> implements Presenter<V>,Serializable {
     public MvpFragment mFragment;
     public MvpActivity mActivity;
     public V mvpView;
+    private CompositeSubscription mCompositeSubscription;
 
     @Override
     public void attachView(V view) {
@@ -34,12 +36,18 @@ public class MvpPresenter<V> implements Presenter<V>,Serializable {
             mDialog = ((MvpDialog) mvpView);
             mActivity = (MvpActivity) mDialog.getActivity();
         }
+        mCompositeSubscription = new CompositeSubscription();
     }
 
     @Override
     public void detachView() {
+        if (mCompositeSubscription != null && mCompositeSubscription.hasSubscriptions()) {
+            mCompositeSubscription.unsubscribe();
+            mCompositeSubscription.clear();
+        }
         mvpView = null;
     }
+
 
     public <T> Subscription addSubscription(Observable<T> observable, Subscriber<T> subscriber) {
         Observable.Transformer<T, T> transformer;
@@ -50,10 +58,12 @@ public class MvpPresenter<V> implements Presenter<V>,Serializable {
         } else {
             transformer = mActivity.bindUntilEvent(ActivityEvent.DESTROY);
         }
-        return observable.subscribeOn(Schedulers.newThread())
+        Subscription subscription =  observable.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .compose(transformer)
                 .subscribe(subscriber);
+        mCompositeSubscription.add(subscription);
+        return subscription;
     }
 
 }
